@@ -1,0 +1,54 @@
+-------------------------------------------------------------
+
+Instale as dependências:
+npm install
+npm install express knex mysql2 dotenv
+npm install --save-dev nodemon
+
+-------------------------------------------------------------
+
+1. Rodar servidor:
+npm start
+
+2.Testar a API com cURL:
+curl http://localhost:3000/
+
+-------------------------------------------------------------
+
+### CRUD COMPLETO ###
+
+-------------------------------------------------------------
+
+CREATE:
+curl -X POST http://localhost:3000/usuarios \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nome": "Name",
+    "data_nascimento": "0000-00-00",
+    "telefone": "00000000000",
+    "email": "name@example.com"
+  }'
+
+-------------------------------------------------------------
+
+READ:
+curl http://localhost:3000/usuarios
+
+-------------------------------------------------------------
+
+UPDATE:
+curl http://localhost:3000/usuarios/[ID USUARIO]
+
+curl -X PUT http://localhost:3000/usuarios/[ID USUARIO] \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nome": "New name",
+    "data_nascimento": "0000-00-00",
+    "telefone": "00000000000",
+    "email": "new.name@example.com"
+  }'
+
+-------------------------------------------------------------
+
+DELETE:
+curl -X DELETE http://localhost:3000/usuarios/[ID USUARIO]
